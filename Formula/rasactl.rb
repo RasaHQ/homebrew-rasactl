@@ -11,18 +11,18 @@ class Rasactl < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/RasaHQ/rasactl/releases/download/0.0.7/rasactl_0.0.7_darwin_amd64.tar.gz"
-      sha256 "a307a647539a7033f39ff3063f61c333b27eade041d09bf0093bb62297903142"
+      sha256 "5f475771c2d1faf8e707284b32cdd3feb2813eb6a2b5ce7e1814241ce3b51d10"
     end
     if Hardware::CPU.arm?
       url "https://github.com/RasaHQ/rasactl/releases/download/0.0.7/rasactl_0.0.7_darwin_arm64.tar.gz"
-      sha256 "be46823abac419cec28f48944babdede86bb793d953d1a0301e6c9fb253759ce"
+      sha256 "febd2ba9c684b1c1b4eec6402e3093a0c406c169cc28ce337ff05a2a28ae9bcc"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/RasaHQ/rasactl/releases/download/0.0.7/rasactl_0.0.7_linux_amd64.tar.gz"
-      sha256 "bcb0db4992033bc8f04aa0a6d0ac1479cdc436c2637dc996173b3eb9e8aabcdc"
+      sha256 "e486ce2ec090efca3464be43ea1286d3b93c8d34c74d36ab79cee05393e6f4fb"
     end
   end
 
