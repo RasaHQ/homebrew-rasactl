@@ -5,24 +5,24 @@
 class Rasactl < Formula
   desc "rasactl deploys Rasa X / Enterprise on your local or remote Kubernetes cluster and manages Rasa X / Enterprise deployments."
   homepage "https://github.com/RasaHQ/rasactl"
-  version "0.0.25"
+  version "0.0.26"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.25/rasactl_0.0.25_darwin_amd64.tar.gz"
-      sha256 "57ecefd6d1ac07b63d00a0b61c5ca8098bd81fb20b47f5ce7a06ba97fdb99b00"
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.26/rasactl_0.0.26_darwin_amd64.tar.gz"
+      sha256 "37383c9f9e1f32f788296626579554d0f34fdb02e396b13d30f0fbb8abbe91a8"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.25/rasactl_0.0.25_darwin_arm64.tar.gz"
-      sha256 "416b618faead19f43cb738c3f526e705ed85140eb8798a6aaae3805cfc83f56a"
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.26/rasactl_0.0.26_darwin_arm64.tar.gz"
+      sha256 "04695419a276f83a6af6dd2399d51bc6451193d0591baff1b46e0364f33349d0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.25/rasactl_0.0.25_linux_amd64.tar.gz"
-      sha256 "45ff69bb6e14987599f742cb040140764af717068bc4befe27377ad16176ad64"
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.0.26/rasactl_0.0.26_linux_amd64.tar.gz"
+      sha256 "737d59f0be0eda968e6866db0d831b4fb54696108d53adab52904170623694e1"
     end
   end
 
