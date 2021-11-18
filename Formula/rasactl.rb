@@ -5,32 +5,45 @@
 class Rasactl < Formula
   desc "rasactl deploys Rasa X / Enterprise on your local or remote Kubernetes cluster and manages Rasa X / Enterprise deployments."
   homepage "https://github.com/RasaHQ/rasactl"
-  version "0.4.0"
-  bottle :unneeded
+  version "0.4.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.0/rasactl_0.4.0_darwin_arm64.tar.gz"
-      sha256 "4aa712af6de6cb2f09f3e5766286a87755fca6b66ecbe11b81ba408e91495321"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.0/rasactl_0.4.0_darwin_amd64.tar.gz"
-      sha256 "6b38b71a67e0711755ed5d265b02508748c353d58f67bec34c06ee43140c6ece"
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.1/rasactl_0.4.1_darwin_amd64.tar.gz"
+      sha256 "78f852b76807b0b48e07de8d8f92df5f3fbfccbb8e6381a342b18eb4ac18db99"
+
+      def install
+        bin.install "rasactl"
+        bash_completion.install "completions/rasactl.bash" => "rasactl"
+        zsh_completion.install "completions/rasactl.zsh" => "_rasactl"
+        fish_completion.install "completions/rasactl.fish"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.1/rasactl_0.4.1_darwin_arm64.tar.gz"
+      sha256 "cf878f8c4f5dbca180a71ced4dd2d6f65d222feaf92bc9e683c185223db310fd"
+
+      def install
+        bin.install "rasactl"
+        bash_completion.install "completions/rasactl.bash" => "rasactl"
+        zsh_completion.install "completions/rasactl.zsh" => "_rasactl"
+        fish_completion.install "completions/rasactl.fish"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.0/rasactl_0.4.0_linux_amd64.tar.gz"
-      sha256 "37d19665b5a1cde97cc9a3ac6174a805abc64b3d2341bfde49483711dd0ea9e8"
-    end
-  end
+      url "https://github.com/RasaHQ/rasactl/releases/download/0.4.1/rasactl_0.4.1_linux_amd64.tar.gz"
+      sha256 "34c3c749c50d94e3bc3ad71bbad203fb87812e9e8a89c30ec2c0e05119099f9c"
 
-  def install
-    bin.install "rasactl"
-    bash_completion.install "completions/rasactl.bash" => "rasactl"
-    zsh_completion.install "completions/rasactl.zsh" => "_rasactl"
-    fish_completion.install "completions/rasactl.fish"
+      def install
+        bin.install "rasactl"
+        bash_completion.install "completions/rasactl.bash" => "rasactl"
+        zsh_completion.install "completions/rasactl.zsh" => "_rasactl"
+        fish_completion.install "completions/rasactl.fish"
+      end
+    end
   end
 
   test do
